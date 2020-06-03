@@ -4,12 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/a_workspace/CPP-proj/HCIProj/main.cpp" "E:/a_workspace/CPP-proj/HCIProj/cmake-build-debug/CMakeFiles/HCIProj.dir/main.cpp.obj"
+  "E:/CLionProjects/HCIProj/src/main.cpp" "E:/CLionProjects/HCIProj/cmake-build-debug/CMakeFiles/HCIProj.dir/src/main.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../"
+  "E:/opencv-mingw/opencv/include"
+  "E:/opencv-mingw/build/install/include"
   )
 
 # Targets to which this target links.
