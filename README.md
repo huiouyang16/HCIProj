@@ -28,7 +28,7 @@ git clone https://github.com/Hui-Ouyang16/HCIProj.git
 
 Before doing this, you should install opencv and opencv_contrib in your computer
 
-If you do not know how to do this, you can refer [How to install OpenCV in windows 10 using MinGW.pdf](https://github.com/Hui-Ouyang16/HCIProj/blob/master/docs/How to install OpenCV in windows 10 using MinGW.pdf)
+If you do not know how to do this, you can refer [How-to-install-OpenCV-in-windows-10-using-MinGW.pdf](https://github.com/Hui-Ouyang16/HCIProj/blob/master/docs/How-to-install-OpenCV-in-windows-10-using-MinGW.pdf) [may sometimes you should download the file to read it]
 
 ```cmake
 # change to your OpenCV path
