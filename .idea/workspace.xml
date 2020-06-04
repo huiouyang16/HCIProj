@@ -11,7 +11,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73f9438d-2441-4595-9c89-f1a901707321" name="Default Changelist" comment="" />
+    <list default="true" id="73f9438d-2441-4595-9c89-f1a901707321" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +25,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cD7mKNIkrwtZzigJnXas7lpiVq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,6 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -46,6 +55,7 @@
       <recent name="E:\CLionProjects\HCIProj" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\CLionProjects\HCIProj\docs" />
       <recent name="E:\CLionProjects\HCIProj" />
     </key>
   </component>
@@ -73,7 +83,7 @@
       <workItem from="1590314467916" duration="14552000" />
       <workItem from="1590416808032" duration="2495000" />
       <workItem from="1590907925416" duration="22000" />
-      <workItem from="1591187041856" duration="1486000" />
+      <workItem from="1591187041856" duration="4002000" />
     </task>
     <servers />
   </component>
