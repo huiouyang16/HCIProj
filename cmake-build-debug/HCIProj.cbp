@@ -86,6 +86,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="E:/CLionProjects/HCIProj/src/CursorController.cpp">
+			<Option target="HCIProj"/>
+		</Unit>
+		<Unit filename="E:/CLionProjects/HCIProj/src/CursorController.h">
+			<Option target="HCIProj"/>
+		</Unit>
 		<Unit filename="E:/CLionProjects/HCIProj/src/main.cpp">
 			<Option target="HCIProj"/>
 		</Unit>

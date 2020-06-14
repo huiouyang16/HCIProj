@@ -7,6 +7,7 @@
 #include <opencv2/tracking.hpp>
 #include <opencv2/tracking/tracker.hpp>
 #include <iostream>
+#include "CursorController.h"
 
 using namespace cv;
 using namespace std;
@@ -14,6 +15,17 @@ using namespace std;
 void detectAndDisplay(Mat frame);
 
 int main() {
+
+    /**
+     * example of the class CursorController
+     */
+//    auto *cc = new CursorController;
+//    cc->setPos(1808, 12);
+//    cc->leftClick();
+//    cc->setPos(1717, 860);
+//    Sleep(1000);
+//    cc->leftDoubleClick();
+
     cout << "OpenCV Version: " << CV_VERSION << endl;
 
     VideoCapture capture;

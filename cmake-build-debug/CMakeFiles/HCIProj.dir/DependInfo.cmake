@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "E:/CLionProjects/HCIProj/src/CursorController.cpp" "E:/CLionProjects/HCIProj/cmake-build-debug/CMakeFiles/HCIProj.dir/src/CursorController.cpp.obj"
   "E:/CLionProjects/HCIProj/src/main.cpp" "E:/CLionProjects/HCIProj/cmake-build-debug/CMakeFiles/HCIProj.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HCIProj.dir/src/CursorController.cpp.obj"
   "CMakeFiles/HCIProj.dir/src/main.cpp.obj"
   "HCIProj.exe"
   "HCIProj.exe.manifest"

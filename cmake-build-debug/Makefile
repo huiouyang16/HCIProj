@@ -122,6 +122,33 @@ HCIProj/fast:
 	$(MAKE) -f CMakeFiles\HCIProj.dir\build.make CMakeFiles/HCIProj.dir/build
 .PHONY : HCIProj/fast
 
+src/CursorController.obj: src/CursorController.cpp.obj
+
+.PHONY : src/CursorController.obj
+
+# target to build an object file
+src/CursorController.cpp.obj:
+	$(MAKE) -f CMakeFiles\HCIProj.dir\build.make CMakeFiles/HCIProj.dir/src/CursorController.cpp.obj
+.PHONY : src/CursorController.cpp.obj
+
+src/CursorController.i: src/CursorController.cpp.i
+
+.PHONY : src/CursorController.i
+
+# target to preprocess a source file
+src/CursorController.cpp.i:
+	$(MAKE) -f CMakeFiles\HCIProj.dir\build.make CMakeFiles/HCIProj.dir/src/CursorController.cpp.i
+.PHONY : src/CursorController.cpp.i
+
+src/CursorController.s: src/CursorController.cpp.s
+
+.PHONY : src/CursorController.s
+
+# target to generate assembly for a file
+src/CursorController.cpp.s:
+	$(MAKE) -f CMakeFiles\HCIProj.dir\build.make CMakeFiles/HCIProj.dir/src/CursorController.cpp.s
+.PHONY : src/CursorController.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... HCIProj
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... src/CursorController.obj
+	@echo ... src/CursorController.i
+	@echo ... src/CursorController.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
