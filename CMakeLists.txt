@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(HCIProj)
 
 set(CMAKE_CXX_STANDARD 20)
-add_executable(HCIProj src/main.cpp src/CursorController.cpp src/CursorController.h)
+add_executable(HCIProj src/main.cpp src/CursorController.cpp src/CursorController.h src/Application.cpp src/Application.h)
 
 # change to your OpenCV path
 set(OpenCV_DIR "E:/opencv-mingw/build/install")

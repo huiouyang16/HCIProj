@@ -1,6 +1,6 @@
-//
-// Created by Leslie on 2020/6/14.
-//
+/**
+ * author: Hui Ouyang
+ */
 
 #include "CursorController.h"
 

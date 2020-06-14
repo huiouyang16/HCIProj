@@ -1,6 +1,6 @@
-//
-// Created by Leslie on 2020/6/14.
-//
+/**
+ * author: Hui Ouyang
+ */
 
 #ifndef HCIPROJ_CURSORCONTROLLER_H
 #define HCIPROJ_CURSORCONTROLLER_H
