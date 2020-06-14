@@ -1,3 +1,0 @@
-E:/CLionProjects/HCIProj/cmake-build-debug/CMakeFiles/HCIProj.dir
-E:/CLionProjects/HCIProj/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/CLionProjects/HCIProj/cmake-build-debug/CMakeFiles/rebuild_cache.dir
