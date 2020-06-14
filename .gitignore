@@ -32,5 +32,5 @@
 *.app
 
 # .idea folder and cmake-build-debug
-.idea/
-cmake-build-debug/
+.idea/*
+cmake-build-debug/*
