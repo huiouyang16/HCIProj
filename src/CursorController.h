@@ -14,6 +14,12 @@ class CursorController {
 private:
     POINT p;
 
+    double k; // width ratio
+    double b; // height ratio
+
+    int sw; // screen width
+    int sh; // screen height
+
     void refreshPos();
 
 public:
@@ -83,6 +89,11 @@ public:
      * this method can click right single time
      */
     void rightClick();
+
+    void setFrameSize(int fw, int fh);
+
+    void setPosScale(int lastX, int lastY, int currentX, int currentY);
+
 };
 
 #endif //HCIPROJ_CURSORCONTROLLER_H

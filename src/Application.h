@@ -24,7 +24,14 @@ private:
     VideoCapture capture;
     Mat frame;
     POINT *lastPos;
+    POINT *currentPos;
     CursorController *cursorController;
+    bool isFist = false;
+    bool isPalm = false;
+    bool last_isFist = false;
+    bool last_isPalm = false;
+    CascadeClassifier palm_cascade;
+    CascadeClassifier fist_cascade;
 
 public:
     Application();
@@ -34,6 +41,10 @@ public:
     void run();
 
     void detectAndDisplay();
+
+    void detectAndClick();
+
+    void moveCursor();
 };
 
 #endif //HCIPROJ_APPLICATION_H
