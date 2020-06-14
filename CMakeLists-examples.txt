@@ -5,9 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(HCIProj src/main.cpp src/CursorController.cpp src/CursorController.h src/Application.cpp src/Application.h)
 
 # change to your OpenCV path
-set(OpenCV_DIR "C:/environment/build/install")
+set(OpenCV_DIR "E:/opencv-mingw/build/install")
 # change to your OpenCV path
-set(OpenCV_INCLUDE_DIRS "C:/environment/opencv/include")
+set(OpenCV_INCLUDE_DIRS "E:/opencv-mingw/opencv/include")
 
 find_package(OpenCV REQUIRED)
 
@@ -19,7 +19,7 @@ message(STATUS " include path: ${OpenCV_INCLUDE_DIRS}")
 # change to your OpenCV path
 include_directories(
         ${PROJECT_SOURCE_DIR}
-        "C:/environment/opencv/include"
+        "E:/opencv-mingw/opencv/include"
 )
 
 include_directories(${OpenCV_INCLUDE_DIRS})
