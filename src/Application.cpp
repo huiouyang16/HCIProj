@@ -1,5 +1,5 @@
 /**
- * author: Hui Ouyang
+ * author: Hui Ouyang and Mike Chester Wang
  */
 
 #include "Application.h"
@@ -11,7 +11,7 @@ Application::Application() {
     this->lastPos->y = -1;
     this->currentPos = new POINT;
     this->currentPos->x = -1;
-    this->currentPos-> y = -1;
+    this->currentPos->y = -1;
 }
 
 Application::~Application() {
@@ -33,10 +33,10 @@ void Application::run() {
             int frame_width = this->frame.cols;
             int frame_height = this->frame.rows;
             this->cursorController->setFrameSize(frame_width, frame_height);
-        }else{
+        } else {
             return;
         }
-    }else{
+    } else {
         return;
     }
 
@@ -55,7 +55,9 @@ void Application::run() {
             moveCursor();
             detectAndClick();
 
-            waitKey(30);
+            if (waitKey(1) == 27) {
+                break;
+            }
         } else {
             cout << "Open the camera failed." << endl;
             break;
@@ -64,14 +66,14 @@ void Application::run() {
     this->capture.release();
 }
 
-void Application::moveCursor(){
-    if(isPalm){
+void Application::moveCursor() {
+    if (isPalm) {
         cursorController->setPosScale(lastPos->x, lastPos->y, currentPos->x, currentPos->y);
     }
 }
 
-void Application::detectAndClick(){
-    if(last_isPalm && isFist){
+void Application::detectAndClick() {
+    if (last_isPalm && isFist) {
 //        cursorController->leftClick();
         cursorController->leftDoubleClick();
     }
@@ -93,24 +95,24 @@ void Application::detectAndDisplay() {
                                   2, 0 | CASCADE_SCALE_IMAGE,
                                   Size(30, 30));
 
-    if(!palm.empty()){
+    if (!palm.empty()) {
         last_isPalm = isPalm;
         isPalm = true;
         this->lastPos->x = this->currentPos->x;
         this->lastPos->y = this->currentPos->y;
         this->currentPos->x = palm[0].x;
         this->currentPos->y = palm[0].y;
-    }else{
+    } else {
         isPalm = false;
     }
-    if(!fist.empty()){
+    if (!fist.empty()) {
         last_isFist = isFist;
         isFist = true;
         this->lastPos->x = this->currentPos->x;
         this->lastPos->y = this->currentPos->y;
         this->currentPos->x = fist[0].x;
         this->currentPos->y = fist[0].y;
-    }else{
+    } else {
         isFist = false;
     }
 

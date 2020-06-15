@@ -1,9 +1,9 @@
 /**
- * author: Hui Ouyang and Mike Chester Wang
+ * author: Hui Ouyang
  */
 
-#ifndef HCIPROJ_APPLICATION_H
-#define HCIPROJ_APPLICATION_H
+#ifndef HCIPROJ_TRACKINGAPPLICATION_H
+#define HCIPROJ_TRACKINGAPPLICATION_H
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
@@ -19,32 +19,22 @@
 using namespace std;
 using namespace cv;
 
-class Application {
+class TrackingApplication {
 private:
     VideoCapture capture;
     Mat frame;
-    POINT *lastPos;
-    POINT *currentPos;
+    Rect2d roi;
     CursorController *cursorController;
-    bool isFist = false;
-    bool isPalm = false;
-    bool last_isFist = false;
-    bool last_isPalm = false;
-    CascadeClassifier palm_cascade;
-    CascadeClassifier fist_cascade;
+    Ptr<Tracker> tracker;
 
 public:
-    Application();
+    TrackingApplication();
 
-    ~Application();
+    ~TrackingApplication();
 
     void run();
 
-    void detectAndDisplay();
-
-    void detectAndClick();
-
-    void moveCursor();
 };
 
-#endif //HCIPROJ_APPLICATION_H
+
+#endif //HCIPROJ_TRACKINGAPPLICATION_H

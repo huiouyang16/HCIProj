@@ -1,8 +1,10 @@
 #include "Application.h"
-#include "TrackingMode.h"
+#include "TrackingApplication.h"
 
 int main() {
-    Application app;
+//    Application app;
+//    app.run();
+    TrackingApplication app;
     app.run();
 }
 
