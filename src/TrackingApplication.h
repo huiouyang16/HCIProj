@@ -1,7 +1,6 @@
 /**
  * author: Hui Ouyang
  */
-
 #ifndef HCIPROJ_TRACKINGAPPLICATION_H
 #define HCIPROJ_TRACKINGAPPLICATION_H
 
@@ -24,8 +23,13 @@ private:
     VideoCapture capture;
     Mat frame;
     Rect2d roi;
+    POINT *lastPos;
+    POINT *currentPos;
     CursorController *cursorController;
     Ptr<Tracker> tracker;
+    CascadeClassifier fist_cascade;
+    bool lastFist;
+    int redRect;
 
 public:
     TrackingApplication();
@@ -35,6 +39,5 @@ public:
     void run();
 
 };
-
 
 #endif //HCIPROJ_TRACKINGAPPLICATION_H

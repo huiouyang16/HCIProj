@@ -1,11 +1,18 @@
 #include "Application.h"
 #include "TrackingApplication.h"
+#include <windows.h>
 
-int main() {
-//    Application app;
-//    app.run();
-    TrackingApplication app;
-    app.run();
+int main(int argc, char *argv[]) {
+    int result = MessageBoxEx(nullptr, TEXT("Use Detection Mode?"),
+                              "HCI Proj", MB_YESNO, LANG_ENGLISH);
+
+    if (result == 6) {
+        Application app;
+        app.run();
+    } else {
+        TrackingApplication app;
+        app.run();
+    }
 }
 
 

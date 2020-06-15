@@ -44,6 +44,7 @@ void Application::run() {
         cout << "load palm xml file failed." << endl;
         return;
     }
+
     while (true) {
         if (this->capture.isOpened()) {
             this->capture >> this->frame;
@@ -75,14 +76,14 @@ void Application::moveCursor() {
 void Application::detectAndClick() {
     if (last_isPalm && isFist) {
 //        cursorController->leftClick();
-        cursorController->leftDoubleClick();
+        CursorController::leftDoubleClick();
     }
 }
 
 void Application::detectAndDisplay() {
 
-    vector<Rect> palm;
-    vector<Rect> fist;
+    vector <Rect> palm;
+    vector <Rect> fist;
 
     Mat frame_gray;
     cvtColor(this->frame, frame_gray, CV_BGR2GRAY);
@@ -128,5 +129,5 @@ void Application::detectAndDisplay() {
                 360, Scalar(255, 0, 0), 4, 8, 0);
     }
 
-    imshow("test", this->frame);
+    imshow("HCI Proj Detection", this->frame);
 }
