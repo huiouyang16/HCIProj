@@ -14,15 +14,14 @@ class CursorController {
 private:
     POINT p;
 
-    double k; // width ratio
-    double b; // height ratio
-
     int sw; // screen width
     int sh; // screen height
 
     void refreshPos();
 
 public:
+    double k; // width ratio
+    double b; // height ratio
     /**
      * this method is used to get the current X position of the cursor
      * @return the X position of the cursor

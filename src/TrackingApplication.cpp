@@ -39,10 +39,17 @@ void TrackingApplication::run() {
 
     this->capture >> this->frame;
     this->roi = selectROI("HCI Proj Tracking", this->frame);
+    int frame_width = this->frame.cols;
+    int frame_height = this->frame.rows;
+    this->cursorController->setFrameSize(frame_width, frame_height);
 
     if (this->roi.width == 0 || this->roi.height == 0) {
         return;
     }
+    this->currentPos->x = this->roi.x + 0.5 * this->roi.width;
+    this->currentPos->y = this->roi.y + 0.5 * this->roi.height;
+    cursorController->setPos(cursorController->k * this->currentPos->x,
+                             cursorController->b * this->currentPos->y);
 
     this->tracker = TrackerCSRT::create();
     this->tracker->init(this->frame, this->roi);
@@ -61,13 +68,6 @@ void TrackingApplication::run() {
 
         this->currentPos->x = this->roi.x + 0.5 * this->roi.width;
         this->currentPos->y = this->roi.y + 0.5 * this->roi.height;
-
-        if (this->lastPos->x != -1) {
-
-            this->cursorController->move(this->lastPos->x - this->currentPos->x,
-                                         this->currentPos->y - this->lastPos->y,
-                                         3);
-        }
 
         // detect the fist
         vector<Rect> fist;
@@ -89,10 +89,16 @@ void TrackingApplication::run() {
         if (!fist.empty() && palm.empty()) {
             if (!this->lastFist) {
                 this->redRect = 3;
-                CursorController::leftDoubleClick();
+//                CursorController::leftDoubleClick();
+                CursorController::leftClick();
             }
             this->lastFist = true;
         } else {
+            if (this->lastPos->x != -1) {
+                this->cursorController->move(this->lastPos->x - this->currentPos->x,
+                                             this->currentPos->y - this->lastPos->y,
+                                             3);
+            }
             this->lastFist = false;
         }
 

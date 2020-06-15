@@ -35,8 +35,6 @@ void CursorController::setPosScale(int lastX, int lastY, int currentX, int curre
     int odx = lastX - currentX;
     int ody = currentY - lastY;
 
-    std::cout << odx << "        " << ody;
-
     odx = abs(odx) < STEDY_THRESHOLD ? 0 : odx;
     ody = abs(ody) < STEDY_THRESHOLD ? 0 : ody;
 
@@ -46,8 +44,6 @@ void CursorController::setPosScale(int lastX, int lastY, int currentX, int curre
     int posY = this->p.y + BOOST_RATIO * b * ody;
     setPos(posX, posY);
 
-    std::cout << "      |      " << posX << "        " << posY << std::endl;
-
 }
 
 void CursorController::setPos(int X, int Y) {
@@ -55,6 +51,11 @@ void CursorController::setPos(int X, int Y) {
 }
 
 void CursorController::move(int difX, int difY, int rate) {
+
+
+    difX = abs(difX) < 7 ? difX : abs(difX) * difX / 7;
+    difY = abs(difY) < 7 ? difY : abs(difY) * difY / 7;
+
     this->refreshPos();
     for (int i = 1; i <= rate; ++i) {
         setPos(this->p.x + difX * i, this->p.y + difY * i);
