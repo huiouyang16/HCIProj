@@ -4,10 +4,41 @@ This is a project of the course C/C++ programming.
 
 
 
+There is two mode in our program.
+
+**Tracking mode**: use the Tracker and CascadeClassifier from OpenCV, it is stable, but the user should specify the object (hand).
+
+**Detection mode**: only use the CascadeClassifier from OpenCV, it is not very stable, but the user need not to specify the object (hand).
+
+
+
+**Enter the program:**
+
++ a message box will ask you whether you want to use the Detection mode. (or Tracking mode in default)
+
+**Enter the Tracking mode:**
+
++ specify the object (hand) first, and then press the **enter** or **space** in your keyboard
++ then, the tracker will track the object, the movement of the object will move the cursor
++ also, if you change your hand to fist, the cursor will double click
+
+**Enter the Detection mode:**
+
++ the program will auto detect your hand (in palm or in fist)
++ when your hand in palm, the cursor will keep click
++ when your hand in fist, the cursor will release click
++ when your hand move, the cursor also move
+
+
+
+the demo in the demo-videos directory
+
+
+
 ## Project Settings
 
-+ opencv 4.2.0
-+ opencv_contrib
++ OpenCV 4.2.0
++ opencv_contrib 4.2.0
 + MinGW-w64 x86_64 8.1.0
 + CLion
 + CMake 3.15.3
@@ -26,7 +57,7 @@ git clone https://github.com/Hui-Ouyang16/HCIProj.git
 
 #### Setting OpenCV DIR in CMakeLists.txt
 
-Before doing this, you should install opencv and opencv_contrib in your computer
+Before doing this, you should install OpenCV and opencv_contrib in your computer (yell, we all know you can do it by yourselves)
 
 If you do not know how to do this, you can refer [How-to-install-OpenCV-in-windows-10-using-MinGW.pdf](https://github.com/Hui-Ouyang16/HCIProj/blob/master/docs/How-to-install-OpenCV-in-windows-10-using-MinGW.pdf) [may sometimes you should download the file to read it]
 
@@ -48,6 +79,8 @@ include_directories(
 Setting the Toolchains: use MinGW
 
 Setting the Working Directory: use the root of the project file
+
+Setting the Environment variables: use the bin directory of your OpenCV install
 
 #### Enjoy the program
 
