@@ -73,9 +73,7 @@ void Application::moveCursor(){
 void Application::detectAndClick(){
     if(last_isPalm && isFist){
 //        cursorController->leftClick();
-        cursorController->keepLeftClick();
-    }else{
-        cursorController->releaseLeftClick();
+        cursorController->leftDoubleClick();
     }
 }
 

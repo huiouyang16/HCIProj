@@ -30,20 +30,28 @@ POINT CursorController::getPos() {
 void CursorController::setPosScale(int lastX, int lastY, int currentX, int currentY){
 
     int STEDY_THRESHOLD = 12;
-    double BOOST_RATIO = 0.5;
+    double BOOST_RATIO = 0.7;
 
     int odx = lastX - currentX;
     int ody = currentY - lastY;
 
-    std::cout << odx << "        "  << ody << std::endl;
+    std::cout << odx << "        "  << ody;
 
     odx = abs(odx) < STEDY_THRESHOLD ? 0 : odx;
     ody = abs(ody) < STEDY_THRESHOLD ? 0 : ody;
 
-//    move(k * odx, b * ody);
+
     this->refreshPos();
-    setPos(abs(odx) < STEDY_THRESHOLD ? this->p.x : (int)(BOOST_RATIO * (sw - k * currentX)),
-           abs(ody) < STEDY_THRESHOLD ? this->p.y : (int)(BOOST_RATIO * (b * currentY)));
+    int posX = this->p.x + BOOST_RATIO * k * odx;
+    int posY = this->p.y + BOOST_RATIO * b * ody;
+    setPos(posX, posY);
+
+    std::cout << "      |      " << posX << "        "  << posY << std::endl;
+
+//    move(k * odx, b * ody);
+
+//    setPos(abs(odx) < STEDY_THRESHOLD ? this->p.x : (int)(BOOST_RATIO * (sw - k * currentX)),
+//           abs(ody) < STEDY_THRESHOLD ? this->p.y : (int)(BOOST_RATIO * (b * currentY)));
 //    int dx = (int)(k * odx);
 //    int dy = (int)(b * ody);
 //    move(dx, dy);
