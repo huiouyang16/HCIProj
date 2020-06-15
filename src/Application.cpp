@@ -74,7 +74,7 @@ void Application::moveCursor() {
 }
 
 void Application::detectAndClick() {
-    if (last_isPalm && isFist) {
+    if (last_isPalm && isFist && !isPalm) {
 //        cursorController->leftClick();
         CursorController::leftDoubleClick();
     }
@@ -82,8 +82,8 @@ void Application::detectAndClick() {
 
 void Application::detectAndDisplay() {
 
-    vector <Rect> palm;
-    vector <Rect> fist;
+    vector<Rect> palm;
+    vector<Rect> fist;
 
     Mat frame_gray;
     cvtColor(this->frame, frame_gray, CV_BGR2GRAY);

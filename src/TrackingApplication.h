@@ -28,6 +28,7 @@ private:
     CursorController *cursorController;
     Ptr<Tracker> tracker;
     CascadeClassifier fist_cascade;
+    CascadeClassifier palm_cascade;
     bool lastFist;
     int redRect;
 

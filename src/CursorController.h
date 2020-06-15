@@ -53,7 +53,7 @@ public:
      * @param difX the moved distance of X position
      * @param difY the moved distance of Y position
      */
-    void move(int difX, int difY);
+    void move(int difX, int difY, int rate);
 
     /**
      * this method can keep the left click

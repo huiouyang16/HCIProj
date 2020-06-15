@@ -27,7 +27,7 @@ POINT CursorController::getPos() {
     return res;
 }
 
-void CursorController::setPosScale(int lastX, int lastY, int currentX, int currentY){
+void CursorController::setPosScale(int lastX, int lastY, int currentX, int currentY) {
 
     int STEDY_THRESHOLD = 12;
     double BOOST_RATIO = 0.7;
@@ -35,7 +35,7 @@ void CursorController::setPosScale(int lastX, int lastY, int currentX, int curre
     int odx = lastX - currentX;
     int ody = currentY - lastY;
 
-    std::cout << odx << "        "  << ody;
+    std::cout << odx << "        " << ody;
 
     odx = abs(odx) < STEDY_THRESHOLD ? 0 : odx;
     ody = abs(ody) < STEDY_THRESHOLD ? 0 : ody;
@@ -46,15 +46,7 @@ void CursorController::setPosScale(int lastX, int lastY, int currentX, int curre
     int posY = this->p.y + BOOST_RATIO * b * ody;
     setPos(posX, posY);
 
-    std::cout << "      |      " << posX << "        "  << posY << std::endl;
-
-//    move(k * odx, b * ody);
-
-//    setPos(abs(odx) < STEDY_THRESHOLD ? this->p.x : (int)(BOOST_RATIO * (sw - k * currentX)),
-//           abs(ody) < STEDY_THRESHOLD ? this->p.y : (int)(BOOST_RATIO * (b * currentY)));
-//    int dx = (int)(k * odx);
-//    int dy = (int)(b * ody);
-//    move(dx, dy);
+    std::cout << "      |      " << posX << "        " << posY << std::endl;
 
 }
 
@@ -62,9 +54,11 @@ void CursorController::setPos(int X, int Y) {
     SetCursorPos(X, Y);
 }
 
-void CursorController::move(int difX, int difY){
+void CursorController::move(int difX, int difY, int rate) {
     this->refreshPos();
-    setPos(this->p.x + difX, this->p.y + difY);
+    for (int i = 1; i <= rate; ++i) {
+        setPos(this->p.x + difX * i, this->p.y + difY * i);
+    }
 }
 
 void CursorController::keepLeftClick() {

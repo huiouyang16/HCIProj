@@ -26,6 +26,10 @@ void TrackingApplication::run() {
         cout << "load fist file failed." << endl;
         return;
     }
+    if (!this->palm_cascade.load("res/rpalm.xml")) {
+        cout << "load palm file failed." << endl;
+        return;
+    }
 
     this->capture.open(0);
     if (!this->capture.isOpened()) {
@@ -59,8 +63,10 @@ void TrackingApplication::run() {
         this->currentPos->y = this->roi.y + 0.5 * this->roi.height;
 
         if (this->lastPos->x != -1) {
+
             this->cursorController->move(this->lastPos->x - this->currentPos->x,
-                                         this->currentPos->y - this->lastPos->y);
+                                         this->currentPos->y - this->lastPos->y,
+                                         3);
         }
 
         // detect the fist
@@ -73,7 +79,14 @@ void TrackingApplication::run() {
                                             2, 0 | CASCADE_SCALE_IMAGE,
                                             Size(30, 39));
 
-        if (!fist.empty()) {
+        // detect the palm
+        vector<Rect> palm;
+        this->palm_cascade.detectMultiScale(frame_gray, palm, 1.1,
+                                            2, 0 | CASCADE_SCALE_IMAGE,
+                                            Size(30, 39));
+
+
+        if (!fist.empty() && palm.empty()) {
             if (!this->lastFist) {
                 this->redRect = 3;
                 CursorController::leftDoubleClick();
